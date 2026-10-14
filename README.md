@@ -7,6 +7,9 @@ Reusable skills for GitHub Copilot and other skills-compatible agents. Each skil
 | Skill                                                                                    | Purpose                                                                                                                                 |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | [`tech-topic-notes`](.github/skills/tech-topic-notes/SKILL.md)                           | Portable Markdown study notes on technical topics, from fundamentals to internals, trade-offs, and interview prep.                      |
+| [`course-finder`](.github/skills/course-finder/SKILL.md)                                 | Finds the best free, low-cost, and university-backed online courses for a topic, with live-verified prices.                             |
+| [`flashcard-reviser`](.github/skills/flashcard-reviser/SKILL.md)                         | Turns a topic or notes into flashcards with an Anki-ready export, plus an optional graded quiz.                                         |
+| [`portfolio-project-designer`](.github/skills/portfolio-project-designer/SKILL.md)       | Designs a realistic portfolio project for a topic, with architecture, milestones, and interview talking points.                         |
 | [`topic-diagram-creator`](.github/skills/topic-diagram-creator/SKILL.md)                 | Turns one technical topic into a phone-readable PNG, carousel, GIF, or MP4 for learning and social posts.                               |
 | [`interview-learning-roadmap`](.github/skills/interview-learning-roadmap/SKILL.md)       | Turns a job description into a prioritized learning roadmap for interview preparation.                                                  |
 | [`resume-role-fit`](.github/skills/resume-role-fit/SKILL.md)                             | Compares a candidate-provided resume with a job description and identifies supported matches and gaps.                                  |
@@ -15,6 +18,8 @@ Reusable skills for GitHub Copilot and other skills-compatible agents. Each skil
 | [`mock-interview-coach`](.github/skills/mock-interview-coach/SKILL.md)                   | Runs an interactive, role-aware mock interview and gives actionable feedback.                                                           |
 | [`job-search-strategy`](.github/skills/job-search-strategy/SKILL.md)                     | Builds a practical role-targeting, job-search, and application plan around the candidate's stated preferences.                          |
 | [`social-article-writer`](.github/skills/social-article-writer/SKILL.md)                 | Writes platform-formatted posts and articles in a warm, plain-language, human voice, with length and platform-limit checks.             |
+| [`linkedin-networking-messages`](.github/skills/linkedin-networking-messages/SKILL.md)   | Writes personal LinkedIn connection notes, follow-ups, referral requests, and other one-to-one messages.                                |
+| [`linkedin-comment-writer`](.github/skills/linkedin-comment-writer/SKILL.md)             | Writes thoughtful, human LinkedIn comments that add an insight, question, or experience.                                                |
 
 ## Use In VS Code
 
