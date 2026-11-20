@@ -1,7 +1,9 @@
 ---
 name: job-search-strategy
-description: Help candidates plan a focused job search by clarifying target roles, search terms, filters, referral and networking steps, evaluation criteria, scam checks, and an application workflow with a tracking template. Use for job-search planning, role targeting, and organizing applications; verify live openings when browsing is available.
+description: Help candidates plan a focused job search by clarifying target roles, search terms, filters, referral and networking steps, evaluation criteria, scam checks, and an application workflow with a tracking template. Use for job-search planning, role targeting, and organizing applications; verify live openings when browsing is available. To keep an existing tracker updated from email, use job-application-tracker.
 argument-hint: "[target roles, preferences, and optional location, timeline, or sponsorship needs]"
+license: MIT
+version: 1.0.0
 ---
 
 # Job Search Strategy
@@ -47,3 +49,24 @@ Present the plan in portable Markdown (headings, lists, and tables only; no HTML
 8. **First-Step Checklist** — a short list of what to do this week.
 
 If the candidate asks for current vacancies, include verifiable links and the date checked, or state plainly that live listings could not be verified.
+
+## Example
+
+**Input:** "Plan my search for remote data engineer roles, mid-level. I can do about 10 applications a week."
+
+**Output (trimmed):**
+
+> **1. Target-Role Definition** — Must-haves: remote, mid-level data engineering. Adjacent titles: Analytics Engineer, Data Platform Engineer, ETL Developer.
+>
+> **2. Search Terms and Sources** — `("data engineer" OR "analytics engineer") remote` on job boards that support a remote filter; company careers pages for your top 15 targets.
+>
+> **5. Weekly Application Routine** — 10 targeted applications, 3 to 5 outreach messages to people at target companies, and follow-ups on applications older than 14 days.
+>
+> **8. First-Step Checklist** — List 15 target companies; save two search queries as alerts; set up the tracker. …
+>
+> *Assumptions:* no location limits within remote; no sponsorship needs mentioned.
+
+## Limits
+
+- **Needs:** target roles or a rough direction. Browsing is optional and is needed only to check live openings.
+- **Won't:** invent job listings or deadlines, apply on the user's behalf, ask about or assume immigration status, or guarantee results.

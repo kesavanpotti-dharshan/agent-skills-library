@@ -2,6 +2,8 @@
 name: flashcard-reviser
 description: Turn a technical topic or pasted notes into flashcards for revision, with an Anki-ready export, and optionally run an interactive quiz that grades answers and revisits missed cards. Use when the user wants to memorize, revise, or self-test a topic, especially before interviews.
 argument-hint: '[topic or pasted notes] [optional: quiz, number of cards, difficulty]'
+license: MIT
+version: 1.0.0
 ---
 
 # Flashcard Reviser
@@ -12,7 +14,7 @@ Help the user remember what they learn. Turn a topic or the user's own notes int
 
 - **Source:** a topic name, or notes pasted by the user. When notes are provided, base the cards on the notes and do not add facts that contradict them; flag anything in the notes that looks incorrect or outdated instead of silently copying it.
 - **Mode (optional):** **cards** (default) or **quiz**. Switch to quiz mode only when the user asks for a quiz, a test, or to be asked questions.
-- **Options (optional):** number of cards, difficulty, or focus area. Default to 15 to 25 cards covering the whole topic at a mixed difficulty suitable for an experienced engineer.
+- **Options (optional):** number of cards, difficulty, or focus area. Default to 15 to 25 cards covering the whole topic at a mixed difficulty. Match the user's level if they state it or it is clear from the conversation; otherwise aim at an intermediate learner and say so in one line.
 
 ## Writing Good Cards
 
@@ -45,3 +47,31 @@ Output in portable Markdown:
 3. Keep track of missed and partly correct questions, and ask them again at the end, phrased differently when possible.
 4. Let the user say "skip", "hint", or "stop" at any time. A hint narrows the answer without giving it away.
 5. Finish with a short summary: score, weak areas, and the cards worth revising. Offer the missed cards in the Anki import format.
+
+## Example
+
+**Input:** "Make flashcards on HTTP methods and idempotency, about 10 cards."
+
+**Output (trimmed):**
+
+> # Flashcards: HTTP Methods and Idempotency
+>
+> 1. **What does it mean for an HTTP method to be idempotent?** *(Easy)*
+>    Sending the same request once or many times has the same intended effect on the server.
+> 2. **Which standard methods are idempotent?** *(Medium)*
+>    GET, HEAD, OPTIONS, TRACE, PUT, and DELETE (RFC 9110). POST and PATCH are not guaranteed to be.
+> 3. **A client retries a POST after a timeout and the order is created twice. What is a common fix?** *(Hard)*
+>    Have the client send an idempotency key so the server can detect and ignore the duplicate.
+>
+> …
+>
+> **Anki Import** — paste into a text file and import as tab-separated text.
+>
+> ```
+> What does it mean for an HTTP method to be idempotent?	Sending the same request once or many times has the same intended effect on the server.	Easy
+> ```
+
+## Limits
+
+- **Needs:** a topic or pasted notes. Web research is optional, for checking version- or provider-specific facts.
+- **Won't:** invent facts, silently copy errors from the user's notes, create files unless asked, or schedule spaced-repetition reviews (use Anki or a similar app for that).

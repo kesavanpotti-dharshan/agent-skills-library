@@ -1,7 +1,9 @@
 ---
 name: linkedin-comment-writer
-description: Write thoughtful, human LinkedIn comments on another person's post that add real value and build professional visibility. Use when the user pastes a LinkedIn post and wants a comment that adds an insight, experience, question, or respectful counterpoint rather than generic praise.
+description: Write thoughtful, human LinkedIn comments on another person's post that add real value and build professional visibility. Use when the user pastes a LinkedIn post and wants a comment that adds an insight, experience, question, or respectful counterpoint rather than generic praise. To message a person directly, use linkedin-networking-messages; to write your own post, use social-article-writer.
 argument-hint: '[pasted post text] [optional: angle, such as insight, question, experience, or counterpoint]'
+license: MIT
+version: 1.0.0
 ---
 
 # LinkedIn Comment Writer
@@ -23,7 +25,7 @@ Write comments that make the post author and other readers think "that's a usefu
 
 ## Writing Rules
 
-- **Short.** Usually one to four sentences; rarely more than about 400 characters. A comment is not a post.
+- **Short.** Usually one to four sentences, and rarely more than a short paragraph. A comment is not a post.
 - **Specific.** Refer to a particular point in the post so the comment could not be pasted under any other post.
 - **Human.** Plain words, contractions, and a natural tone. Avoid generic praise ("Great post!", "So insightful!", "Thanks for sharing!") as the whole comment, and avoid AI-sounding words and patterns such as delve, leverage, unlock, game-changer, "This resonates deeply", "It's not just X, it's Y", and stacks of emojis.
 - **No self-promotion.** No links to the user's own content, no "check out my post", and no pitching services, unless the user explicitly asks and it is clearly relevant.
@@ -36,3 +38,28 @@ Write comments that make the post author and other readers think "that's a usefu
 1. **Two or three comment options**, each in its own copyable block, labeled by angle (for example "Insight", "Question").
 2. **Character count** for each option.
 3. **Recommendation** — one line on which option fits best and why.
+
+## Example
+
+**Input:** "Post: 'We cut our cloud bill by 30% just by shutting down non-production environments outside working hours.'"
+
+**Output (trimmed):**
+
+> **Insight**
+> ```
+> The scheduling part is easy to copy. The part people miss: jobs that quietly depend on non-prod being up overnight, like scheduled tests or data syncs. Worth listing those before you flip the switch.
+> ```
+> 199 characters. Comment limit: check current limits.
+>
+> **Question**
+> ```
+> Did the 30% come mostly from compute, or did you shut down databases too? Curious how you handled stateful services that are slow to come back up.
+> ```
+> 146 characters. Comment limit: check current limits.
+>
+> **Recommendation** — Insight: it adds a practical point the post didn't cover without needing your own experience.
+
+## Limits
+
+- **Needs:** the post text pasted by the user. A profile file at `~/.agent-skills/networking-profile.md` is optional.
+- **Won't:** scrape or log in to LinkedIn, post comments, help with automated or mass commenting, or invent the user's experience.

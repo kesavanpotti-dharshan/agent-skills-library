@@ -1,7 +1,9 @@
 ---
 name: resume-cover-letter-tailoring
-description: Tailor a candidate's resume, cover letter, or application summary to a specific job description while preserving factual accuracy, using a natural human voice and screening-friendly formatting. Use when adapting application materials for a role, improving relevance, or clarifying impact without fabricating experience.
+description: Tailor a candidate's resume, cover letter, or application summary to a specific job description while preserving factual accuracy, using a natural human voice and screening-friendly formatting. Use when adapting application materials for a role, improving relevance, or clarifying impact without fabricating experience. To check how well a resume fits a role before rewriting anything, use resume-role-fit.
 argument-hint: "[resume or letter and job description or link]"
+license: MIT
+version: 1.0.0
 ---
 
 # Resume and Cover Letter Tailoring
@@ -60,3 +62,25 @@ Present the result in portable Markdown (headings, lists, and plain text only; n
 3. **Facts to Confirm** — placeholders or claims the candidate must verify before using.
 
 If the user supplied only a job description and no candidate material, ask for the document or offer a clearly labeled blank structure; do not write candidate achievements from scratch.
+
+## Example
+
+**Input:** Resume bullet "Worked on the payments API and made it faster." Job description emphasizes API performance and observability.
+
+**Output (trimmed):**
+
+> **Tailored Material**
+> - Improved response times on the payments API by [confirm %] by [confirm change, for example adding caching or tuning queries], and added dashboards to track latency.
+>
+> **Key Changes**
+> - Led with the outcome the role cares about (performance).
+> - Added observability only as a placeholder to confirm, because the role asks for it.
+>
+> **Facts to Confirm**
+> - The percentage improvement and what you actually changed.
+> - Whether you built the latency dashboards. If not, remove that part.
+
+## Limits
+
+- **Needs:** the candidate's current resume, cover letter, or answer, plus the job description (text or an accessible link).
+- **Won't:** invent or inflate skills, titles, dates, metrics, or credentials; write achievements from scratch; design visual templates; or guarantee that a document will pass screening.

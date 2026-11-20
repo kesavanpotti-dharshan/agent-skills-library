@@ -1,7 +1,9 @@
 ---
 name: mock-interview-coach
-description: Run an interactive mock interview tailored to a target role, seniority, and interview type, using a format guide and rubric for each type, then provide specific feedback and a saveable session summary. Use for coding, system design, architecture, behavioral, leadership, domain, or mixed interview practice.
+description: Run an interactive mock interview tailored to a target role, seniority, and interview type, using a format guide and rubric for each type, then provide specific feedback and a saveable session summary. Use for coding, system design, architecture, behavioral, leadership, domain, or mixed interview practice. To build and polish your own behavioral stories before practicing, use behavioral-story-coach.
 argument-hint: "[role, seniority, interview type, and optional job description]"
+license: MIT
+version: 1.0.0
 ---
 
 # Mock Interview Coach
@@ -46,3 +48,27 @@ At the end of the session, provide a summary in portable Markdown (headings, lis
 3. **Recurring Strengths**
 4. **Highest-Value Improvements** — the two or three changes that would help most.
 5. **Suggested Practice** — specific topics or question types to practice next.
+
+## Example
+
+**Input:** "Mock system design interview for a senior backend engineer, about 45 minutes."
+
+**Output (trimmed):**
+
+> **Rubric** — requirements gathering, high-level design, depth, trade-offs, scalability and reliability, communication.
+>
+> **Question 1 (about 40 minutes):** Design a URL shortener that handles a high volume of reads. Start by clarifying requirements.
+>
+> *(after the candidate answers)*
+>
+> | Area | Rating | Reason |
+> | --- | --- | --- |
+> | Requirements gathering | Strong | Asked about read/write ratio and link expiry before designing |
+> | Depth | Needs work | Didn't address what happens when one link goes viral (hot keys) |
+>
+> **Highest-value improvement:** after the high-level design, pick the riskiest component and go deep without waiting to be asked.
+
+## Limits
+
+- **Needs:** a target role and interview type. A job description is optional.
+- **Won't:** give numeric scores or hiring predictions, claim that a question will be asked by a specific employer, or invent experience for the candidate.
