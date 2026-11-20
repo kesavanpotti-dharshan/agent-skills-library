@@ -1,14 +1,16 @@
 ---
 name: course-finder
-description: Find the best online courses and programs for a user-provided topic from platforms such as Coursera, edX, Udemy, and university open courseware, prioritizing free and low-cost options. Use when the user wants course recommendations, a learning path, or university-backed programs for a topic; verifies prices, ratings, and availability live and explains each pick.
+description: Find the best online courses and programs for a user-provided topic from platforms such as Coursera, edX, Udemy, and university open courseware, prioritizing free and low-cost options. Use when the user wants course recommendations, a learning path, or university-backed programs for a topic; verifies prices, ratings, and availability live and explains each pick. To work out what to study for a specific job posting, use interview-learning-roadmap first.
 argument-hint: '[topic] [optional: level, budget, hours per week, certificate needed, format]'
+license: MIT
+version: 1.0.0
 ---
 
 # Course Finder
 
 Find and recommend the best available online courses and programs for the user's topic, with free and low-cost options first and university-backed options clearly identified. Explain why each course was chosen so the user can decide quickly.
 
-The topic is the only required input. Optional inputs are the learner's level, budget, available hours per week, whether a certificate is needed, and preferred format (video, reading, hands-on). If they are not given, assume a motivated learner with no budget preference, state the assumption briefly after the results, and proceed. Anything the user specifies takes precedence over the defaults in this skill. The default low-cost threshold is **$50 USD** total, or per month for subscriptions, unless the user gives a different budget or currency.
+The topic is the only required input. Optional inputs are the learner's level, budget, available hours per week, whether a certificate is needed, and preferred format (video, reading, hands-on). If they are not given, assume a motivated learner with no budget preference, state the assumption briefly after the results, and proceed. Anything the user specifies takes precedence over the defaults in this skill. The default low-cost threshold is **$50 USD** total, or per month for subscriptions, unless the user gives a different budget or currency. If the user's currency is clear from the conversation, apply the threshold in that currency (roughly equivalent value) and say so in the Assumptions.
 
 ## Workflow
 
@@ -61,3 +63,28 @@ Present the results in portable Markdown, in this order:
 Use a table for each tier with these columns: Course, Provider / University, Level, Length, Cost (checked date), Free Option, Certificate, Why Recommended. Write "Not listed" when the course page does not show a value; never guess. Leave a tier out with one line of explanation if no course qualifies, rather than filling it with weak options.
 
 Keep descriptions short and plain. The goal is a decision the user can make in a few minutes.
+
+## Example
+
+**Input:** "Find me courses to learn Kubernetes. Beginner, about 4 hours a week, I'd like a certificate if it's cheap."
+
+**Output (trimmed):**
+
+> **Top Pick** — [Course title] by [provider]: covers pods, deployments, and services with hands-on labs; free to audit, certificate extra.
+>
+> **Free Options**
+>
+> | Course | Provider / University | Level | Length | Cost (checked date) | Free Option | Certificate | Why Recommended |
+> | --- | --- | --- | --- | --- | --- | --- | --- |
+> | [title] | [provider] | Beginner | [as listed] | Free (checked [date]) | Yes | Not listed | Labs on a real cluster |
+>
+> **Assumptions** — Prices in USD; "cheap" read as within the $50 low-cost threshold.
+>
+> **Sources** — [course title]: [full URL]
+
+Every bracketed value comes from the live course page at run time; none are filled from memory.
+
+## Limits
+
+- **Needs:** web research for live prices, ratings, and availability. Without it, the skill lists only long-standing free resources, marked **not live-verified**, with no prices or ratings.
+- **Won't:** recommend courses from memory, guess prices or ratings, follow affiliate or sponsored rankings, or enroll or pay on the user's behalf.

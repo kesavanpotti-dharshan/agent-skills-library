@@ -1,7 +1,9 @@
 ---
 name: linkedin-networking-messages
-description: Write short, personal LinkedIn networking messages for a specific person, including connection notes within the invitation character limit, follow-ups, referral requests, informational chat requests, recruiter replies, thank-you notes, and reconnect messages. Use when the user shares a LinkedIn profile (URL plus pasted profile details) and wants a message to send to that person.
+description: Write short, personal LinkedIn networking messages for a specific person, including connection notes within the invitation character limit, follow-ups, referral requests, informational chat requests, recruiter replies, thank-you notes, and reconnect messages. Use when the user shares a LinkedIn profile (URL plus pasted profile details) and wants a message to send to that person. To comment on someone's post, use linkedin-comment-writer.
 argument-hint: '[profile URL and pasted profile details] [message type or goal]'
+license: MIT
+version: 1.0.0
 ---
 
 # LinkedIn Networking Messages
@@ -55,8 +57,8 @@ Template for `networking-profile.md`:
 
 ## Character Limits
 
-- LinkedIn limits the length and number of personalized invitation notes, and the limits differ between free and Premium accounts and change over time. When web research is available, verify the current limits on LinkedIn's official help pages. Otherwise, treat 300 characters as the maximum and say the limit was not live-verified.
-- For connection notes, always provide a version under 300 characters and a shorter version under 200 characters, so one fits regardless of account type.
+- LinkedIn limits the length and number of personalized invitation notes, and the limits differ between free and Premium accounts and change over time. When web research is available, verify the current limits on LinkedIn's official help pages. Otherwise, do not state a number as the limit; say the limit was not live-verified and ask the user to check the current limit before sending.
+- For connection notes, always provide a standard version and a noticeably shorter version (one or two sentences), so one is likely to fit whichever limit applies to the user's account.
 - Count characters with a reliable tool, including spaces, punctuation, and line breaks. Recount after every edit and never claim an unverified count.
 
 ## Voice
@@ -80,3 +82,28 @@ Template for `networking-profile.md`:
 2. **Character count** for each version, and the limit it was checked against (marked **verified** or **not live-verified**).
 3. **Suggested follow-up** — when to follow up if there is no reply (for example, once after 7 to 10 days), and a one-line follow-up message. Never suggest more than one follow-up.
 4. **Assumptions** — only if something important was inferred.
+
+## Example
+
+**Input:** "Connection note to Sam Lee, engineering manager at a payments startup. I read Sam's post last week about moving their ledger to event sourcing. I'm a backend engineer with three years of Kafka experience."
+
+**Output (trimmed):**
+
+> **Direct**
+> ```
+> Hi Sam, I read your post on moving the ledger to event sourcing. I've spent three years building Kafka-based services and I'm curious how you handle replays at scale. Would be glad to connect.
+> ```
+> 192 characters. Invitation note limit: [verified value and source, or **not live-verified**: check current limits]
+>
+> **Short**
+> ```
+> Hi Sam, enjoyed your post on moving your ledger to event sourcing. I work on Kafka-based services and would be glad to connect.
+> ```
+> 127 characters. Check current limits.
+>
+> **Suggested follow-up** — If Sam accepts, send one short message within a few days with a specific question about the post.
+
+## Limits
+
+- **Needs:** profile details pasted by the user (a URL alone is not enough). A sender profile file is optional. Web research is optional, for checking current invitation limits.
+- **Won't:** scrape or log in to LinkedIn, send messages, write bulk or automated outreach, or invent shared history or interests.

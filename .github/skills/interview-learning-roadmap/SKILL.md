@@ -1,7 +1,9 @@
 ---
 name: interview-learning-roadmap
-description: Analyze a job description or job posting link and create a prioritized, role-specific learning roadmap for interview preparation, including the interview areas the role's seniority suggests. Use when a candidate wants to know what topics and skills to study for a role. Do not request or assess a resume, portfolio, or candidate profile.
+description: Analyze a job description or job posting link and create a prioritized, role-specific learning roadmap for interview preparation, including the interview areas the role's seniority suggests. Use when a candidate has only the job description and wants to know what to study; to compare their resume with the job, use resume-role-fit, and to find courses for a topic, use course-finder.
 argument-hint: "[job description text or link] [optional: time until the interview]"
+license: MIT
+version: 1.0.0
 ---
 
 # Interview Learning Roadmap
@@ -30,3 +32,26 @@ Present the roadmap in portable Markdown (headings, lists, and tables only; no H
 5. **Source Notes** — brief caveats about missing or inaccessible job-post details, if any.
 
 Avoid dumping a generic interview syllabus. Omit topics not supported by the posting unless clearly labeled as a limited inference. Do not claim that any topic will definitely be asked in an interview.
+
+## Example
+
+**Input:** "Senior Backend Engineer. Design and operate event-driven services on Kafka. PostgreSQL experience required. Mentor other engineers. Participate in on-call."
+
+**Output (trimmed):**
+
+> **1. Role at a Glance** — Senior backend role focused on building and running event-driven services.
+>
+> **2. Prioritized Learning Areas**
+>
+> | Area | Priority | Evidence | Why it matters | Ready when you can… |
+> | --- | --- | --- | --- | --- |
+> | Event-driven design with Kafka | Core | Explicit | "design and operate event-driven services on Kafka" | Explain partitions, consumer groups, and delivery guarantees, and their trade-offs |
+> | Production operations and incidents | Secondary | Explicit | "participate in on-call" | Walk through how you would diagnose a lagging consumer |
+> | System design | Core | Inferred | Senior scope implies design rounds | Design a service end to end and defend the trade-offs |
+>
+> **3. Likely Interview Areas (Inferred)** — system design, a technical deep dive on event-driven systems, and behavioral questions on mentoring. …
+
+## Limits
+
+- **Needs:** the job description as text, or a link the agent can open.
+- **Won't:** ask for or assess a resume, predict exact interview questions, or invent study-hour estimates.

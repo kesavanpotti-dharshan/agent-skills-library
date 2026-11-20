@@ -1,7 +1,9 @@
 ---
 name: behavioral-story-coach
-description: Help candidates develop truthful, concise stories from their real experience for behavioral and leadership interviews, and build a reusable story bank. Use for STAR examples, accomplishment stories, conflict, failure, collaboration, influence, technical leadership, and lessons learned.
+description: Help candidates develop truthful, concise stories from their real experience for behavioral and leadership interviews, and build a reusable story bank. Use for STAR examples, accomplishment stories, conflict, failure, collaboration, influence, technical leadership, and lessons learned; for a full simulated interview with scoring, use mock-interview-coach instead.
 argument-hint: "[behavioral prompt, competency, or experience to develop] [optional: target company or role]"
+license: MIT
+version: 1.0.0
 ---
 
 # Behavioral Story Coach
@@ -60,3 +62,22 @@ Present results in portable Markdown (headings, lists, and tables only; no HTML 
 5. **Missing Details** — questions or placeholders for facts to confirm.
 
 For a story bank, add a table with Story, Competencies, and Questions It Answers, followed by the competencies that still need a story. Call out missing details with questions or placeholders rather than making them up. Avoid claiming that one story is guaranteed to satisfy an interviewer.
+
+## Example
+
+**Input:** "Help me answer 'Tell me about a time you disagreed with a teammate.' I pushed back on a colleague's plan to rewrite our reporting service; we ran a two-week spike instead and kept the existing service."
+
+**Output (trimmed):**
+
+> **Competency** — Handling technical disagreement; decision-making with incomplete agreement.
+>
+> **Story Draft (spoken)** — "A colleague proposed rewriting our reporting service. I was worried about the risk, so I suggested we time-box a two-week spike first. I set up … [your actions]. At the end of the spike we agreed to keep the existing service because … [confirm reason]. What I learned was …"
+>
+> **Likely Follow-ups** — "How did your colleague react?" Answer from what actually happened; don't make them the villain.
+>
+> **Missing Details** — What did the spike measure? Was there a result you can quantify? Who made the final call?
+
+## Limits
+
+- **Needs:** a real experience from the user. Web research is optional, for checking a company's published values.
+- **Won't:** invent stories, results, or metrics; reveal confidential names or numbers without the user's confirmation; or guarantee that an answer will satisfy an interviewer.

@@ -1,7 +1,9 @@
 ---
 name: resume-role-fit
-description: Compare a candidate-provided resume with a job description to identify evidence-backed strengths, seniority and scope alignment, missing keywords, hard requirements to check, and gaps to address. Use for resume-to-job fit analysis and role alignment. Do not invent qualifications or rewrite the resume unless asked.
+description: Compare a candidate-provided resume with a job description to identify evidence-backed strengths, seniority and scope alignment, missing keywords, hard requirements to check, and gaps to address. Use to see how well a resume matches a job; to rewrite the resume or cover letter, use resume-cover-letter-tailoring, and to plan study from the job description alone, use interview-learning-roadmap.
 argument-hint: "[resume and job description or link]"
+license: MIT
+version: 1.0.0
 ---
 
 # Resume-to-Role Fit
@@ -33,3 +35,26 @@ Present the analysis in portable Markdown (headings, lists, and tables only; no 
 8. **Next Steps** — practical, honest actions.
 
 Distinguish job requirements from preferences and candidate evidence from interpretation. Do not guarantee screening or interview outcomes. Only rewrite application materials when the candidate asks.
+
+## Example
+
+**Input:** A resume plus a job description that requires "5+ years of Go, production Kubernetes experience, and mentoring junior engineers."
+
+**Output (trimmed):**
+
+> **2. Hard Requirements to Check** — 5+ years of Go (stated as required).
+>
+> **3. Evidence-to-Requirement Table**
+>
+> | Criterion | Type | Evidence | Resume evidence or note |
+> | --- | --- | --- | --- |
+> | Go, 5+ years | Required | Partial/adjacent | Go appears in the current role (3 years); earlier roles list Java |
+> | Production Kubernetes | Required | Strong | "Migrated 12 services to Kubernetes" |
+> | Mentoring | Required | Not shown | Not in the resume; add it only if true |
+>
+> **5. Missing Keywords** — "Helm", "on-call" (add only if accurate). …
+
+## Limits
+
+- **Needs:** the resume and the job description (text or an accessible link).
+- **Won't:** invent qualifications, assume work authorization or location, give unsupported fit scores, or rewrite the resume unless asked.

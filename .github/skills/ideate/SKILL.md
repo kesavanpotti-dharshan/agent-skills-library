@@ -2,6 +2,8 @@
 name: ideate
 description: Critically evaluate a product, startup, or side-project idea and show its reality — competitors, legal and platform risks, monetization, a sharper version of the idea, an MVP and validation approach, tech stack and architecture, career value, a scorecard, and a clear verdict. Use when the user shares an idea and wants it discussed, challenged, and turned into a realistic plan.
 argument-hint: '[idea in a few sentences] [optional: goal, budget, time, skills, stack, constraints]'
+license: MIT
+version: 1.0.0
 ---
 
 # Ideate
@@ -32,7 +34,7 @@ Present the analysis in this order, using these section names.
 7. **A Sharper Version** — the improved idea: what to keep, what to change, and what to drop, written as a short pitch.
 8. **Approach and MVP** — the smallest version worth building, what to leave out, and how to test demand before or while building (for example, user interviews, a landing page with a waitlist, a manual or concierge version, or a prototype). Include the first three to five milestones.
 9. **Tech Stack and Architecture** — recommend the stack that fits the idea best, or use the user's stack if they named one. Give a reason and a reasonable alternative for each major choice, a plain-text architecture diagram in a fenced code block, the hardest technical problems, and rough monthly costs for the first version (verified when possible). Prefer managed services and free tiers early, and avoid technologies the idea does not need.
-10. **Career Value** — what building it would demonstrate in interviews, on LinkedIn, or in a portfolio, stated honestly. If the user mentions a specific goal such as a promotion, a job change, or an immigration petition, say realistically how much the project would help that goal and under what conditions.
+10. **Career Value** — what building it would demonstrate in interviews, on LinkedIn, or in a portfolio, stated honestly. If the user mentions a specific goal such as a promotion or a job change, say realistically how much the project would help that goal and under what conditions.
 11. **Scorecard** — a table rating each dimension as **Strong**, **Moderate**, or **Weak**, with a one-line reason:
     - Problem strength
     - Market and competition
@@ -63,3 +65,32 @@ Keep each section focused. A short, sharp section beats a long, generic one; ski
 ## Output
 
 Present the full analysis in portable Markdown (headings, lists, tables, and fenced code blocks only; no HTML or platform-specific syntax), starting with `# Ideate: <short idea name>` and using `## N. Section Name` headings in the order above.
+
+## Example
+
+**Input:** "An app that reminds people before their free trials turn into paid subscriptions. Side project, evenings only."
+
+**Output (trimmed):**
+
+> # Ideate: Trial Reminder
+>
+> ## 1. The Idea, Restated
+> A reminder tool for people who sign up for free trials and forget to cancel, so they stop paying for services they don't use.
+>
+> ## 3. Reality Check
+> Similar apps already exist [names and pricing checked live at run time]. The free alternative is a calendar reminder. For this to work, users must either enter trials by hand or grant access to their email, and each has a cost.
+>
+> ## 11. Scorecard (excerpt)
+>
+> | Dimension | Rating | Reason |
+> | --- | --- | --- |
+> | Problem strength | Moderate | Common annoyance, but low cost per incident |
+> | Legal and platform risk | Moderate | Reading email needs clear consent and may need API approval |
+>
+> ## 12. Verdict
+> **Test demand first.** … Next three steps: …
+
+## Limits
+
+- **Needs:** the idea in a few sentences. Web research is strongly recommended for competitors, prices, and policies; without it those sections are marked **not live-verified**.
+- **Won't:** give legal, tax, or immigration conclusions, invent competitors, numbers, or quotes, or promise that an idea will succeed.
