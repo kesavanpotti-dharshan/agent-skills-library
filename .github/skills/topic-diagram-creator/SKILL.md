@@ -1,6 +1,6 @@
 ---
 name: topic-diagram-creator
-description: 'Create a clear, accurate visual explanation of a technology topic as a rendered PNG, carousel of PNG slides, animated GIF, or short MP4, sized for learning notes and social platforms such as LinkedIn, Instagram, X, Threads, Medium, and Substack. Use when the user names a topic and wants a diagram for learning or posting: architecture diagrams, workflows, sequence diagrams, data flows, lifecycles, and other technical visuals.'
+description: 'Create a clear, accurate visual explanation of a technology topic as a rendered PNG, carousel of PNG slides, animated GIF, or short MP4, sized for learning notes and social platforms such as LinkedIn, Instagram, X, Threads, Medium, and Substack. Use when the user names a topic and wants a diagram for learning or posting: architecture diagrams, workflows, sequence diagrams, data flows, lifecycles, and other technical visuals. For a spoken-style explanation in text, use how-it-works.'
 argument-hint: '[topic] [optional: platform, diagram type, PNG/carousel/GIF/MP4]'
 license: MIT
 version: 1.0.0

@@ -1,9 +1,9 @@
 ---
 name: ideate
-description: Critically evaluate a product, startup, or side-project idea and show its reality — competitors, legal and platform risks, monetization, a sharper version of the idea, an MVP and validation approach, tech stack and architecture, career value, a scorecard, and a clear verdict. Use when the user shares an idea and wants it discussed, challenged, and turned into a realistic plan.
+description: Work through a product, startup, or side-project idea in one of two modes. Evaluate (default) critically tests the idea — competitors, legal and platform risks, monetization, a sharper version, MVP, tech stack, career value, a scorecard, and a verdict. Make it real skips the critique for a user who has already decided to pursue the idea, and gives a practical technical, business, and go-to-market path with free resources and milestones. Use Evaluate when the user shares an idea and wants it challenged; use Make it real when they ask how to build and sell it or say they don't want a critique.
 argument-hint: '[idea in a few sentences] [optional: goal, budget, time, skills, stack, constraints]'
 license: MIT
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Ideate
@@ -17,11 +17,16 @@ Act as an experienced, honest advisor who combines a product strategist, a start
 
 If the goal is not given, evaluate the idea both as a portfolio project and as a business, and say so. Ask a clarifying question only when the idea is too vague to evaluate meaningfully.
 
+## Modes
+
+- **Evaluate (default):** the full analysis below, ending in a Scorecard and Verdict.
+- **Make it real:** use when the user has already decided to pursue the idea, asks things like "help me make this real" or "how do I build and sell this", or says they don't want a critique. If unclear, use Evaluate.
+
 ## Research
 
 Use web research when available to check competitors, existing alternatives, pricing, platform and API policies, and costs. Do not present competitors, prices, market sizes, or policies from memory as current facts. If research is unavailable, say so plainly, mark those sections **not live-verified**, and keep claims general. Never invent companies, numbers, quotes, or statistics.
 
-## Analysis Sections
+## Evaluate Mode (Default)
 
 Present the analysis in this order, using these section names.
 
@@ -55,6 +60,18 @@ Present the analysis in this order, using these section names.
 
 Keep each section focused. A short, sharp section beats a long, generic one; skip filler and do not repeat points across sections.
 
+## Make It Real Mode
+
+Skip the Reality Check, Scorecard, and Verdict. Still flag a serious legal or safety risk if you see one, in one line, without turning it into a critique. Read [references/make-it-real.md](references/make-it-real.md) before writing sections 4 and 5; it has the sales playbook and the rules for free resources.
+
+1. **The Idea, Restated** — who it is for and what problem it solves.
+2. **Technical View** — the recommended stack (or the user's), with a reason and one alternative for each major choice; a plain-text architecture diagram in a fenced code block; the hardest technical problems. Do not write code.
+3. **Business View** — who pays, two or three pricing options, the monthly cost to run the first version (verified when possible), and the legal, platform, and personal constraints to check (employment agreement, visa or work-authorization rules), phrased as things to check.
+4. **Sales and Go-to-Market** — the first ten customers: who they are, where to find them, how to reach them, what to say, and what to measure. Offer one sample outreach message.
+5. **Free Resources** — free tiers, tutorials, communities, and tools for each part of the stack, with links verified when research is available. Never invent a URL.
+6. **Milestones and Next Steps** — the first four milestones, each with a done-when check, and the next three steps.
+7. **Sources** — as in Evaluate mode.
+
 ## Voice
 
 - Plain, direct language; explain technical terms briefly when needed.
@@ -64,7 +81,7 @@ Keep each section focused. A short, sharp section beats a long, generic one; ski
 
 ## Output
 
-Present the full analysis in portable Markdown (headings, lists, tables, and fenced code blocks only; no HTML or platform-specific syntax), starting with `# Ideate: <short idea name>` and using `## N. Section Name` headings in the order above.
+Present the full analysis in portable Markdown (headings, lists, tables, and fenced code blocks only; no HTML or platform-specific syntax), starting with `# Ideate: <short idea name>` (Evaluate) or `# Make It Real: <short idea name>`, and using `## N. Section Name` headings in the mode's order.
 
 ## Example
 
@@ -90,7 +107,17 @@ Present the full analysis in portable Markdown (headings, lists, tables, and fen
 > ## 12. Verdict
 > **Test demand first.** … Next three steps: …
 
+**Make it real input:** "I've decided to build the trial-reminder app. No critique, just help me build and sell it."
+
+> # Make It Real: Trial Reminder
+>
+> ## 4. Sales and Go-to-Market (excerpt)
+> First ten customers: people already complaining about surprise renewals in budgeting communities. Measure: sign-ups per post, and how many add a second trial within a week.
+>
+> ## 6. Milestones and Next Steps (excerpt)
+> 1. Manual-entry reminders working for yourself — done when you get a reminder two days before a real trial ends. …
+
 ## Limits
 
 - **Needs:** the idea in a few sentences. Web research is strongly recommended for competitors, prices, and policies; without it those sections are marked **not live-verified**.
-- **Won't:** give legal, tax, or immigration conclusions, invent competitors, numbers, or quotes, or promise that an idea will succeed.
+- **Won't:** give legal, tax, or immigration conclusions, invent competitors, numbers, quotes, or URLs, write code, or promise that an idea will succeed.
