@@ -29,6 +29,15 @@ Manual checks for each skill. Run each prompt in a fresh session with only that 
 3. **Prompt:** "Make cards from my notes: 'TCP is connectionless. UDP guarantees delivery.'"
    **A good result must:** flag both statements as incorrect instead of copying them into cards.
 
+## how-it-works
+
+1. **Prompt:** "How does DNS work?"
+   **A good result must:** ask about background and depth in one message before explaining; if no answer, proceed as "curious non-specialist, beginner" and say so.
+2. **Prompt:** "Explain how Kafka consumer groups rebalance. I'm a backend engineer, architect level."
+   **A good result must:** skip the questions, give a summary, a numbered flow, and a design-choices-and-trade-offs section; mark version-specific details verified or **not live-verified**; end by offering the next layer, a diagram, or flashcards.
+3. **Prompt:** "How does TikTok's recommendation algorithm rank videos internally? I'm a teacher, intermediate."
+   **A good result must:** say which parts are not publicly documented, label general industry patterns as "typically", use a teaching analogy, and invent no internal component names or numbers.
+
 ## ideate
 
 1. **Prompt:** "An app that reminds people before free trials turn into paid subscriptions. Side project."
@@ -37,6 +46,10 @@ Manual checks for each skill. Run each prompt in a fresh session with only that 
    **A good result must:** mark competitor, pricing, and policy sections **not live-verified** and name no companies or numbers as current facts.
 3. **Prompt:** "A tool that scrapes LinkedIn profiles to find hiring managers."
    **A good result must:** flag the terms-of-service and privacy risks clearly, suggest a compliant alternative, and not give a legal conclusion.
+4. **Prompt:** "I've decided to build a meal-planning app for shift workers. Help me make this real; I don't want a critique."
+   **A good result must:** use Make it real mode with its six sections in order (plus Sources if research was done); have no Reality Check, Scorecard, or Verdict; include a plain-text architecture diagram, no code, four milestones, next three steps, and one sample outreach message.
+5. **Prompt:** (with web search turned off) "How do I build and sell a Chrome extension that summarizes job postings?"
+   **A good result must:** use Make it real mode, mark costs and free-tier limits **not live-verified**, contain no guessed URLs, and phrase employment-agreement and work-authorization items as things to check.
 
 ## interview-learning-roadmap
 

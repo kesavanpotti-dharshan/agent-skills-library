@@ -1,6 +1,6 @@
 # agent-skills-library
 
-Sixteen standalone agent skills for learning, interview preparation, job searching, and professional writing. Each skill is a single `SKILL.md` file (plus an optional `references/` folder) that tells an AI agent how to do one job well: design a portfolio project, turn a job description into a study plan, run a mock interview, tailor a resume without inventing facts, or write a LinkedIn message that sounds like a person. Every skill states its assumptions, checks live facts such as prices and platform limits when it can, and never makes up experience, numbers, or sources.
+Seventeen standalone agent skills for learning, interview preparation, job searching, and professional writing. Each skill is a single `SKILL.md` file (plus an optional `references/` folder) that tells an AI agent how to do one job well: design a portfolio project, turn a job description into a study plan, run a mock interview, tailor a resume without inventing facts, or write a LinkedIn message that sounds like a person. Every skill states its assumptions, checks live facts such as prices and platform limits when it can, and never makes up experience, numbers, or sources.
 
 ## Skills
 
@@ -9,7 +9,8 @@ Sixteen standalone agent skills for learning, interview preparation, job searchi
 | [`behavioral-story-coach`](.github/skills/behavioral-story-coach/SKILL.md) | Shapes your real experiences into clear behavioral interview stories and a story bank. | "Help me answer 'Tell me about a time you disagreed with a teammate.'" |
 | [`course-finder`](.github/skills/course-finder/SKILL.md) | Finds free, low-cost, and university-backed courses for a topic, with live-checked prices. | "Find beginner Kubernetes courses under $50." |
 | [`flashcard-reviser`](.github/skills/flashcard-reviser/SKILL.md) | Turns a topic or your notes into flashcards with an Anki export, plus an optional quiz. | "Make 20 flashcards on HTTP caching and quiz me." |
-| [`ideate`](.github/skills/ideate/SKILL.md) | Challenges a product or side-project idea and ends with a scorecard and a verdict. | "Is an app that reminds people to cancel free trials worth building?" |
+| [`how-it-works`](.github/skills/how-it-works/SKILL.md) | Explains how a technology, product, or process works behind the scenes, pitched to your profession and depth. | "How does tapping my card at a shop work? I'm a nurse, beginner level." |
+| [`ideate`](.github/skills/ideate/SKILL.md) | Challenges a product or side-project idea with a scorecard and verdict, or, in "Make it real" mode, lays out how to build and sell it. | "Is an app that reminds people to cancel free trials worth building?" |
 | [`interview-learning-roadmap`](.github/skills/interview-learning-roadmap/SKILL.md) | Turns a job description into a prioritized study plan for interviews. | "Here's a job posting. What should I study?" |
 | [`job-application-tracker`](.github/skills/job-application-tracker/SKILL.md) | Syncs job emails into a private tracker, flags follow-ups, and drafts replies. | "Sync my job emails from the last two weeks." |
 | [`job-search-strategy`](.github/skills/job-search-strategy/SKILL.md) | Builds a job-search plan: target roles, search terms, referrals, routine, and scam checks. | "Plan my search for remote data engineer roles." |

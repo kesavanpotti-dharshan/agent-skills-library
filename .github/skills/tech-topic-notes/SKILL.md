@@ -1,6 +1,6 @@
 ---
 name: tech-topic-notes
-description: Write complete, portable Markdown study notes on an IT or technology topic (for example .NET, cloud, AI, databases, system design), from fundamentals through internals, trade-offs, and interview preparation. Use when the user wants in-depth notes on a technical topic to save, share, and revise later or before an interview.
+description: Write complete, portable Markdown study notes on an IT or technology topic (for example .NET, cloud, AI, databases, system design), from fundamentals through internals, trade-offs, and interview preparation. Use when the user wants in-depth notes on a technical topic to save, share, and revise later or before an interview. For a short conversational explanation of how something works, use how-it-works.
 argument-hint: '[topic] [optional: category, focus]'
 license: MIT
 version: 1.0.0
